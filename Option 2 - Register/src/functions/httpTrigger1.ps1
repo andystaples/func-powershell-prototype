@@ -24,6 +24,6 @@ if ($name) {
 # Associate values to output bindings by calling 'Push-OutputBinding'.
 $body | Push-HttpBinding -StatusCode OK -Name Response
 
-Register-Binding -Name Request -Type HttpTrigger -Direction 'in' -AuthLevel 'anonymous' -Methods ['get', 'set']
+Register-Binding -Name Request -Type HttpTrigger -Direction 'in' -AuthLevel 'anonymous' -Methods ['get', 'post']
 Register-Binding -Name Response -Type 'out' -Direction 'out' -
 Register-AzureFunction -Name 'PushHttpOutputBindingDemo' -Bindings ['Request', 'Response']
