@@ -26,6 +26,15 @@ function PushHttpOutputBindingDemo1
 
     # Associate values to output bindings by calling 'Push-OutputBinding'.
     $body | Push-HttpBinding -StatusCode OK -Name Response
+
+    # NOTE: We have a couple of options here: Either
+    
+    # $body | Push-HttpBinding -StatusCode OK -Name response
+    #   This requires defining a Push-<type>Binding for every output binding, but feels more natural
+    # OR
+    # Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{StatusCode = [HttpStatusCode]::OK, Body = $body})
+    #   Which can be parsed using the type attribute of the Value, but requiring this is more explicit
+    # OR we register the Name in the main.ps1/equivalent and just use the syntax from the legacy model - less retooling
 }
 
 
@@ -54,4 +63,13 @@ function PushHttpOutputBindingDemo2
 
     # Associate values to output bindings by calling 'Push-OutputBinding'.
     $body | Push-HttpBinding -StatusCode OK -Name response
-}
+
+    # NOTE: We have a couple of options here: Either
+    
+    # $body | Push-HttpBinding -StatusCode OK -Name response
+    #   This requires defining a Push-<type>Binding for every output binding, but feels more natural
+    # OR
+    # Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{StatusCode = [HttpStatusCode]::OK, Body = $body})
+    #   Which can be parsed using the type attribute of the Value, but requiring this is more explicit
+    # OR we register the Name in the main.ps1/equivalent and just use the syntax from the legacy model - less retooling
+} 
