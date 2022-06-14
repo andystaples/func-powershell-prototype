@@ -1,5 +1,8 @@
 $app = [FunctionApp]::new()
 
-$app.RegisterHttpBinding('Request', 'in', 'anonymous', ['get', 'post'])
+$methods = 'get', 'post'
+$bindings = 'Request', 'Response'
+
+$app.RegisterHttpBinding('Request', 'in', 'anonymous', $methods)
 $app.RegisterHttpBinding('Response', 'out')
-$app.RegisterAzureFunction('PushHttpOutputBindingDemo' ['Request', 'Response'])
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo', $bindings)
