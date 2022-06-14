@@ -3,7 +3,6 @@ TODO: Need a way to specify the output response
 #>
 function PushHttpOutputBindingDemo1 
 {
-    [Function('PushHttpOutputBindingDemo')]
     [HttpOutput('Response')]
     param(
         [HttpTrigger('Anonymous', ('GET', 'POST'))]
@@ -47,10 +46,9 @@ function PushHttpOutputBindingDemo1
     # OR we register the Name in the main.ps1/equivalent and just use the syntax from the legacy model - less retooling
 }
 
+
 function PushHttpOutputBindingDemo2
 {
-    [Function('PushHttpOutputBindingDemo')]
-    [HttpOutput('Response')]
     param(
         [HttpTrigger('function', ('GET'))]
         [HttpRequestContext]$Request,
@@ -73,7 +71,7 @@ function PushHttpOutputBindingDemo2
     }
 
     # Associate values to output bindings by calling 'Push-OutputBinding'.
-    $body | Push-HttpBinding -StatusCode OK -Name Response
+    $body | Push-HttpBinding -StatusCode OK -Name response
 
     # NOTE: We have a couple of options here: Either
     

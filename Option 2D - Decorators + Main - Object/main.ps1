@@ -1,0 +1,11 @@
+$app = [FunctionApp]::new()
+
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo2')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo3')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo4')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo5')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo6')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo7')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo8')
+$app.RegisterAzureFunction('PushHttpOutputBindingDemo9')

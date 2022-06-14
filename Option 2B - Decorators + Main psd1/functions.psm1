@@ -1,8 +1,9 @@
 <#
 TODO: Need a way to specify the output response
 #>
-function PushHttpOutputBindingDemo1 
-{
+function PushHttpOutputBindingDemo1 {
+    # Do we need this?
+    [HttpOutput('Response')] 
     param(
         [HttpTrigger('Anonymous', ('GET', 'POST'))]
         [HttpRequestContext]$Request,

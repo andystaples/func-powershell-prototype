@@ -25,12 +25,10 @@ if ($name) {
 }
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
-$body | Push-HttpBinding -StatusCode OK -Name response
 
-# NOTE: We have two options here: Either
+$value =  ([HttpResponseContext]@{
+    StatusCode = [HttpStatusCode]::OK
+    Body = $body
+})
 
-# $body | Push-HttpBinding -StatusCode OK -Name response
-#   This requires defining a Push-<type>Binding for every output binding, but feels more natural
-# OR
-# Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{StatusCode = [HttpStatusCode]::OK, Body = $body})
-#   Which can be parsed using the type attribute of the Value, but requiring this is more explicit
+$value | Push-OutputBinding -Name Response
