@@ -25,16 +25,7 @@ function PushHttpOutputBindingDemo1
     if ($name) {
         $body = "Hello, $name. This HTTP triggered function executed successfully."
     }
-
-    # Associate values to output bindings by calling 'Push-OutputBinding'.
-    # $body | Push-HttpBinding -StatusCode OK -Name Response
-
-    # NOTE: We have a couple of options here: Either
     
-    # $body | Push-HttpBinding -StatusCode OK -Name response
-    #   This requires defining a Push-<type>Binding for every output binding, but feels more natural
-    # OR
-
     $value =  ([HttpResponseContext]@{
         StatusCode = [HttpStatusCode]::OK
         Body = $body

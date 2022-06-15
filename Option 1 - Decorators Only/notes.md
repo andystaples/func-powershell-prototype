@@ -8,7 +8,8 @@ Warnings required for missing bindings
 
 Pros:
 - Attributes are explicit
-- Everything all in "one" file, where the function is defined
+- Everything about one function is all in one file, where the function is defined
+- Multiple files, multiple functions per file (if desired)
 
 Cons:
 - No way to set Function App level settings

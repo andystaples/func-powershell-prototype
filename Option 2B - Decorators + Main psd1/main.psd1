@@ -10,4 +10,3 @@ Export-AzureFunctions @(
     'PushHttpOutputBindingDemo9'
     # .....
 )
-    
