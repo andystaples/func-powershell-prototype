@@ -14,3 +14,10 @@ Pros:
 Cons:
 - No way to set Function App level settings
 - Enforcability of output type?
+
+
+Assumptions/Defaults: 
+- Function() uses the name of the file, for .ps1, or the function name in .psm1
+- HttpTrigger() has an input binding called Request and an output binding called Response
+- HttpTrigger() uses Anonymous auth level and supports ['get', 'post'] methods
+- TimerTrigger() has no output binding

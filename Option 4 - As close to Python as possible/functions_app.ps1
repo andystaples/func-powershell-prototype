@@ -13,9 +13,10 @@ $app = [FunctionApp]::new()
 $manifest = @{
      'HttpTrigger1'='hello'
 }
+
 function HttpTrigger1 {
      params(
-          $Request,
+          [HttpRequest]$Request,
           $TriggerMetadata
      )
 
@@ -25,5 +26,3 @@ function HttpTrigger1 {
 $app.Register($manifest)
 # OR
 $manifest | Register-AzureFunctions 
-
-# function_app.psd1

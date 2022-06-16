@@ -31,4 +31,4 @@ $value =  ([HttpResponseContext]@{
     Body = $body
 })
 
-$value | Push-OutputBinding -Name Response
+$value | Push-OutputBinding -Name response
