@@ -8,3 +8,6 @@ Pros:
 Cons:
 - Only one file allowed, all functions must be in one file
 - Is the object syntax good?
+
+Assumptions/Defaults: 
+- 
